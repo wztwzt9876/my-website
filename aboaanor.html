@@ -1,97 +1,48 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hacked By Captin 0xHunterNaiF0x</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background: #000;
-            font-family: 'Courier New', monospace;
-            height: 100vh;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 1;
-        }
-
-        .overlay-text {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: #cce7ff;
-            text-shadow: 0 0 20px rgba(0, 191, 255, 0.8), 0 0 40px rgba(0, 191, 255, 0.6);
-        }
-
-        .hacked-title {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            animation: glow 1.5s infinite alternate;
-        }
-
-        .hacker-name {
-            font-size: 4rem;
-            color: #ffd700;
-            text-shadow: 0 0 25px rgba(255, 215, 0, 0.8), 0 0 50px rgba(255, 215, 0, 0.6);
-        }
-
-        @keyframes glow {
-            from { text-shadow: 0 0 10px rgba(0,191,255,0.8), 0 0 20px rgba(0,191,255,0.6); }
-            to { text-shadow: 0 0 20px rgba(0,191,255,1), 0 0 40px rgba(0,191,255,0.9); }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hacked By Captin 0xHunterNaiF0x</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #000;
+      font-family: 'Courier New', monospace;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .iframe-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; z-index: 1; }
+    .iframe-bg iframe { position: absolute; width: 100%; height: 100%; left: 0; top: 0; }
+    .overlay-text {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #cce7ff;
+      text-shadow: 0 0 20px rgba(0, 191, 255, 0.8), 0 0 40px rgba(0, 191, 255, 0.6);
+    }
+    .hacked-title { font-size: 3.5rem; margin-bottom: 10px; animation: glow 1.5s infinite alternate; }
+    .hacker-name { font-size: 4rem; color: #ffd700; text-shadow: 0 0 25px rgba(255, 215, 0, 0.8), 0 0 50px rgba(255, 215, 0, 0.6); }
+    @keyframes glow {
+      from { text-shadow: 0 0 10px rgba(0,191,255,0.8), 0 0 20px rgba(0,191,255,0.6); }
+      to { text-shadow: 0 0 20px rgba(0,191,255,1), 0 0 40px rgba(0,191,255,0.9); }
+    }
+  </style>
 </head>
 <body>
-    <video id="bgVideo" autoplay loop playsinline muted>
-        <source src="21.mp4" type="video/mp4" />
-        متصفحك لا يدعم تشغيل الفيديو.
-    </video>
-
-    <div class="overlay-text">
-        <h1 class="hacked-title">Hacked By</h1>
-        <div class="hacker-name">Captin 0xHunterNaiF0x</div>
-    </div>
-
-    <script>
-        const vid = document.getElementById('bgVideo');
-
-        // نجعل الفيديو يبدأ صامت ويشتغل تلقائي
-        vid.muted = true;
-        vid.play().catch(err => {
-            console.warn("تعذر تشغيل الفيديو تلقائيًا:", err);
-        });
-
-        // ننتظر أي تفاعل من المستخدم لتشغيل الصوت
-        function enableSound() {
-            vid.muted = false;
-            vid.volume = 1.0;
-            vid.play();
-            // نزيل الحدث بعد أول تفاعل عشان ما يتكرر
-            window.removeEventListener('click', enableSound);
-            window.removeEventListener('keydown', enableSound);
-            window.removeEventListener('touchstart', enableSound);
-        }
-
-        window.addEventListener('click', enableSound);
-        window.addEventListener('keydown', enableSound);
-        window.addEventListener('touchstart', enableSound);
-    </script>
+  <div class="iframe-bg">
+    <iframe src="https://streamable.com/e/zz2k71?autoplay=1&loop=1&nocontrols=1&muted=1"
+            frameborder="0"
+            allow="autoplay; fullscreen"
+            allowfullscreen></iframe>
+  </div>
+  <div class="overlay-text">
+    <h1 class="hacked-title">Hacked By</h1>
+    <div class="hacker-name">Captin 0xHunterNaiF0x</div>
+  </div>
 </body>
 </html>
