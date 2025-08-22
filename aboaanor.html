@@ -23,7 +23,7 @@
       height: 100%;
       border: none;
       z-index: 1;
-      pointer-events: none; /* يمنع التفاعل مع الفيديو */
+      pointer-events: none;
     }
 
     .overlay-text {
@@ -59,7 +59,7 @@
 
   <!-- فيديو يغطي الشاشة بالكامل مع الصوت -->
   <iframe id="videoFrame"
-          src="https://streamable.com/e/9p91no?autoplay=1&loop=1&nocontrols=1"
+          src="https://streamable.com/e/q0vb3b?autoplay=1&loop=1&nocontrols=1"
           allow="autoplay; fullscreen"
           allowfullscreen></iframe>
 
@@ -69,7 +69,6 @@
   </div>
 
   <script>
-    // في FiveM NUI، هذا غالباً يشغل الصوت فوراً
     window.addEventListener('DOMContentLoaded', () => {
       const iframe = document.getElementById('videoFrame');
       iframe.contentWindow?.postMessage({ volume: 1 }, '*');
@@ -78,4 +77,3 @@
 
 </body>
 </html>
-
