@@ -15,15 +15,14 @@
       background: black;
     }
 
-    iframe {
+    video {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      border: none;
+      object-fit: cover;
       z-index: 1;
-      pointer-events: none; /* لمنع التفاعل مع الفيديو */
     }
 
     .overlay-text {
@@ -58,24 +57,16 @@
 <body>
 
   <!-- فيديو يغطي الشاشة بالكامل -->
-  <iframe id="videoFrame"
-          src="https://streamable.com/e/q0vb3b?autoplay=1&loop=1&nocontrols=1"
-          allow="autoplay; fullscreen"
-          allowfullscreen></iframe>
+  <video autoplay loop muted playsinline>
+    <source src="videos/myvideo.mp4" type="video/mp4">
+    متصفحك لا يدعم عرض الفيديو.
+  </video>
 
   <!-- نص متوهج فوق الفيديو -->
   <div class="overlay-text">
     <h1 class="hacked-title">Hacked By</h1>
     <div class="hacker-name">Captin 0xHunterNaiF0x</div>
   </div>
-
-  <script>
-    // ضبط الصوت عند التحميل (إن دعم المتصفح)
-    window.addEventListener('DOMContentLoaded', () => {
-      const iframe = document.getElementById('videoFrame');
-      iframe.contentWindow?.postMessage({ volume: 1 }, '*');
-    });
-  </script>
 
 </body>
 </html>
